@@ -1,4 +1,3 @@
-
 @if ($mensagem = Session::get('erro'))
     {{ $mensagem }}
 @endif
@@ -8,11 +7,11 @@
         {{ $error }} <br>
     @endforeach
 @endif
-<form action="{{ route('login.auth')}}" method="POST">
+<form action="{{ route('users.store')}}" method="POST">
 @csrf
-
+Nome: <br> <input type="text" name="Firstname"><br>
+Sobrenome: <br> <input type="text" name="Lastname"><br>
 Email: <br> <input type="email" name="email"><br>
 Senha: <br> <input type="password" name="password"><br>
-<input type="checkbox" name="remember">Lembrar-me
-<button type="submit">Entrar</button>
+<button type="submit">Cadastrar</button>
 </form>
